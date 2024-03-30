@@ -1,25 +1,38 @@
-import "./Footer.css"
+import React from "react";
+import Policy from "../Policy/Policy";
+import "./Footer.css";
+
 const Footer = () => {
-
     return (
-
         <footer className="footer">
+            <Policy />
             <div className="subscribe-row">
                 <div className="container">
                     <div className="footer-row-wrapper">
                         <div className="footer-subscribe-wrapper">
                             <div className="footer-subscribe">
                                 <div className="footer-subscribe-top">
-                                    <h3 className="subscribe-title">Get our emails for info on new items, sales and more.</h3>
-                                    <p className="subscribe-desc">We`ll email you a voucher worth $10 off your first order over $50.</p>
+                                    <h3 className="subscribe-title">
+                                        Get our emails for info on new items, sales and more.
+                                    </h3>
+                                    <p className="subscribe-desc">
+                                        We`ll email you a voucher worth $10 off your first order
+                                        over $50.
+                                    </p>
                                 </div>
                                 <div className="footer-subscribe-bottom">
                                     <form>
-                                        <input type="text" placeholder="Enter your email address." />
+                                        <input
+                                            type="text"
+                                            placeholder="Enter your email address."
+                                        />
                                         <button className="btn">Subscribe</button>
                                     </form>
                                     <p className="privacy-text">
-                                        By subscribing you agree to our <a href="#">Terms & Conditions and Privacy & Cookies Policy.</a>
+                                        By subscribing you agree to our{" "}
+                                        <a href="#">
+                                            Terms & Conditions and Privacy & Cookies Policy.
+                                        </a>
                                     </p>
                                 </div>
                             </div>
@@ -30,8 +43,11 @@ const Footer = () => {
                                     Need help? <br />
                                     (+90) 123 456 78 90
                                 </h3>
-                                <p className="contact-desc">We are available 8:00am – 7:00pm</p>
+                                <p className="contact-desc">
+                                    We are available 8:00am – 7:00pm
+                                </p>
                             </div>
+
                             <div className="footer-contact-bottom">
                                 <div className="download-app">
                                     <a href="#">
@@ -41,9 +57,10 @@ const Footer = () => {
                                         <img src="img/footer/google-play.png" alt="" />
                                     </a>
                                 </div>
+
                                 <p className="privacy-text">
-                                    <strong>Shopping App:</strong> Try our View in Your Room feature, manage registries and save payment
-                                    info.
+                                    <strong>Shopping App:</strong> Try our View in Your Room
+                                    feature, manage registries and save payment info.
                                 </p>
                             </div>
                         </div>
@@ -55,17 +72,21 @@ const Footer = () => {
                     <div className="footer-widgets">
                         <div className="brand-info">
                             <div className="footer-logo">
-                                <a href="index.html" className="logo">LOGO</a>
+                                <a href="index.html" className="logo">
+                                    LOGO
+                                </a>
                             </div>
+
                             <div className="footer-desc">
-                                <p> Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis
-                                    in
-                                    termapol.</p>
+                                <p>
+                                    Quis ipsum suspendisse ultrices gravida. Risus commodo
+                                    viverra maecenas accumsan lacus vel facilisis in termapol.
+                                </p>
                             </div>
                             <div className="footer-contact">
                                 <p>
-                                    <a href="tel:555 555 55 55">(+800) 1234 5678 90</a> – <a
-                                        href="mailto:info@example.com">info@example.com</a>
+                                    <a href="tel:555 555 55 55">(+800) 1234 5678 90</a> –{" "}
+                                    <a href="mailto:info@example.com">info@example.com</a>
                                 </p>
                             </div>
                         </div>
@@ -152,14 +173,17 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
+
             <div className="copyright-row">
                 <div className="container">
                     <div className="footer-copyright">
                         <div className="site-copyright">
                             <p>
-                                Copyright 2022 © E-Commerce Theme. All right reserved. Powered by Emin Basbayan.
+                                Copyright 2022 © E-Commerce Theme. All right reserved.
+                                Powered by Emin Basbayan.
                             </p>
                         </div>
+
                         <a href="#">
                             <img src="img/footer/cards.png" alt="" />
                         </a>
@@ -180,8 +204,7 @@ const Footer = () => {
                 </div>
             </div>
         </footer>
+    );
+};
 
-    )
-}
-
-export default Footer
+export default Footer;

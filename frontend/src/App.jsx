@@ -1,18 +1,19 @@
-import React from 'react'
-import './App.css'
+import HomePage from "./pages/HomePage";
+import React from "react";
+import "./App.css";
+import ShopPage from "./pages/ShopPage";
+import AuthPage from "./pages/AuthPage";
 
-import HomePage from './pages/HomePage'
 
 function App() {
-
-
   return (
     <React.Fragment>
-      <HomePage />
+
+      {/* <HomePage /> */}
+      <AuthPage />
     </React.Fragment>
-
-
-  )
+  );
 }
 
-export default App
+
+export default App;
