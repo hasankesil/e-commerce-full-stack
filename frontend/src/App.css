@@ -1,5 +1,4 @@
-.section-title {
-    text-align: center;
+.section-title { text-align: center;
     margin-bottom: 35px;
 }
 
@@ -8,4 +7,10 @@
     font-weight: 600;
     line-height: 0.8;
     margin-bottom: 4px;
+}
+
+/* Blog Page */
+
+.blog-page {
+    margin-top: 40px;
 }

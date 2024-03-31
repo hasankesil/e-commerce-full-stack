@@ -4,6 +4,7 @@ import "./App.css";
 import ShopPage from "./pages/ShopPage";
 import AuthPage from "./pages/AuthPage";
 import CartPage from "./pages/CartPage";
+import BlogDetailsPage from "./pages/BlogDetailsPage";
 
 
 function App() {
@@ -12,7 +13,8 @@ function App() {
 
       {/* <HomePage /> */}
       {/* <AuthPage /> */}
-      <CartPage />
+      {/* <CartPage /> */}
+      <BlogDetailsPage/>
     </React.Fragment>
   );
 }
