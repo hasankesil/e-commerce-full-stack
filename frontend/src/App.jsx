@@ -3,6 +3,7 @@ import React from "react";
 import "./App.css";
 import ShopPage from "./pages/ShopPage";
 import AuthPage from "./pages/AuthPage";
+import CartPage from "./pages/CartPage";
 
 
 function App() {
@@ -10,7 +11,8 @@ function App() {
     <React.Fragment>
 
       {/* <HomePage /> */}
-      <AuthPage />
+      {/* <AuthPage /> */}
+      <CartPage />
     </React.Fragment>
   );
 }
