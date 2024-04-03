@@ -1,6 +1,7 @@
 import "./Header.css";
+import PropTypes from "prop-types";
 
-const Header = ({setIsSearchShow}) => {
+const Header = ({ setIsSearchShow }) => {
     return (
         <header>
             <div className="global-notification">
@@ -203,3 +204,7 @@ const Header = ({setIsSearchShow}) => {
 }
 
 export default Header
+
+Header.PropTypes = {
+    setIsSearchShow: PropTypes.func,
+}
