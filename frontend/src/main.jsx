@@ -7,9 +7,9 @@ import './index.css'
 import MainLayout from "./layouts/MainLayout";
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+
     <MainLayout>
       <App />
     </MainLayout>
-  </React.StrictMode>,
+  
 )
