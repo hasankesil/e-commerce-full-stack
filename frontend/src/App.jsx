@@ -13,11 +13,11 @@ function App() {
   return (
     <React.Fragment>
 
-      {/* <HomePage /> */}
+      <HomePage />
       {/* <AuthPage /> */}
       {/* <CartPage /> */}
       {/* <BlogDetailsPage/> */}
-      <ProductDetailsPage />
+      {/* <ProductDetailsPage /> */}
     </React.Fragment>
   );
 }

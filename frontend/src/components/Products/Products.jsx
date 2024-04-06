@@ -1,3 +1,5 @@
+// Products.jsx
+
 import { useState } from "react";
 import ProductItem from "./ProductItem";
 import "./Products.css";
@@ -17,8 +19,6 @@ NextBtn.propTypes = {
     onClick: propTypes.func,
 }
 
-
-
 function PrevBtn({ onClick }) {
     return (
         <button className="glide__arrow glide__arrow--left" onClick={onClick}>
@@ -31,10 +31,9 @@ PrevBtn.propTypes = {
     onClick: propTypes.func,
 };
 
-
 function Products() {
-
     const [products, setProducts] = useState(productsData);
+    const [cartItems, setCartItems] = useState([]);
 
     const sliderSettings = {
         dots: false,
@@ -61,29 +60,22 @@ function Products() {
         ],
     };
 
-
-
     return (
         <section className="products">
+            Cart Sayısı: {cartItems.length}
             <div className="container">
                 <div className="section-title">
                     <h2>Featured Products</h2>
                     <p>Summer Collection New Morden Design</p>
                 </div>
                 <div className="product-wrapper product-carousel">
-
-
                     <Slider {...sliderSettings} >
-                        {products.map((product) => <ProductItem product={product} key={product.id} />)}
+                        {products.map((product) => <ProductItem productItem={product} setCartItems={setCartItems} key={product.id} />)}
                     </Slider>
-
-
                 </div>
             </div>
         </section>
     )
 }
 
-export default Products
-
-
+export default Products;
