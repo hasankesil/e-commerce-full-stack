@@ -1,12 +1,14 @@
 // ProductItem.jsx
 
+import { useContext } from "react";
 import "./ProductItem.css";
 import propTypes from "prop-types";
+import { CartContext } from "../../context/CartProvider";
 
-function ProductItem({ productItem, setCartItems }) {
-    const addToCart = (cartItem) => {
-        setCartItems((prevCart) => [...prevCart, cartItem]);
-    };
+const ProductItem = ({ productItem }) => {
+    
+    const { addToCart } = useContext(CartContext);
+
 
     return (
         <div className="product-item glide__slide glide__slide--active" >
@@ -17,7 +19,9 @@ function ProductItem({ productItem, setCartItems }) {
                 </a>
             </div>
             <div className="product-info">
-                <a href="$" className="product-title">{productItem.name}</a>
+                <a href="$" className="product-title">{productItem.name}
+                Data: {name}
+                </a>
                 <ul className="product-star">
                     <li>
                         <i className="bi bi-star-fill"></i>

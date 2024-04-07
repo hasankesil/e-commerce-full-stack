@@ -1,7 +1,12 @@
 import "./Header.css";
 import PropTypes from "prop-types";
+import { useContext } from "react";
+import { CartContext } from "../../../context/CartProvider";
 
 const Header = ({ setIsSearchShow }) => {
+
+    const {cartItems} = useContext(CartContext);
+
     return (
         <header>
             <div className="global-notification">
@@ -191,7 +196,7 @@ const Header = ({ setIsSearchShow }) => {
                                 <div className="header-cart">
                                     <a href="cart.html" className="header-cart-link">
                                         <i className="bi bi-bag"></i>
-                                        <span className="header-cart-count">0</span>
+                                        <span className="header-cart-count">{cartItems.length}</span>
                                     </a>
                                 </div>
                             </div>
