@@ -13,9 +13,9 @@ function App() {
   return (
     <React.Fragment>
 
-      <HomePage />
+      {/* <HomePage /> */}
       {/* <AuthPage /> */}
-      {/* <CartPage /> */}
+      <CartPage />
       {/* <BlogDetailsPage/> */}
       {/* <ProductDetailsPage /> */}
     </React.Fragment>
