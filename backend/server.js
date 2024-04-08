@@ -6,6 +6,8 @@ const dotenv =require("dotenv");
 
 const app = express();
 
+const mainRoute = require("./routes/index.js")
+
 const port = 5000;
 
 dotenv.config();
@@ -20,14 +22,9 @@ const connect = async () => {
     }
 }
 
-app.get("/", (req, res)=> {
-    res.send("hello express.js");
+app.use("/api", mainRoute);
 
-} );
 
-app.get("/api", (req, res)=> {
-    res.send("this is API route. ")
-})
 
 app.listen(5000, ()=> {
     connect();
