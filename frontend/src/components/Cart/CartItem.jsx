@@ -13,9 +13,9 @@ const CartItem = ({ cartItem }) => {
                 <i className="bi bi-x delete-cart" onClick={() => removeFromCart(cartItem.id)}></i>
             </td>
             <td>{cartItem.name}</td>
-            <td>$108.00</td>
-            <td className="product-quantity">1</td>
-            <td className="product-subtotal">$108.00</td>
+            <td>{cartItem.price.newPrice}</td>
+            <td className="product-quantity">{(cartItem.quantity).toFixed(2)}</td>
+            <td className="product-subtotal">{(cartItem.price.newPrice * cartItem.quantity.toFixed(2))}</td>
         </tr>
     );
 };
