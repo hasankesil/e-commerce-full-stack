@@ -1,5 +1,6 @@
 import HomePage from "./pages/HomePage";
 import React from "react";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import ShopPage from "./pages/ShopPage";
 import AuthPage from "./pages/AuthPage";
@@ -9,16 +10,15 @@ import ProductDetailsPage from "./pages/ProductDetailsPage";
 
 
 
+
 function App() {
   return (
-    <React.Fragment>
+    <Routes>
+<Route path="/" element={<HomePage/>} />
 
-      {/* <HomePage /> */}
-      {/* <AuthPage /> */}
-      <CartPage />
-      {/* <BlogDetailsPage/> */}
-      {/* <ProductDetailsPage /> */}
-    </React.Fragment>
+
+
+    </Routes>
   );
 }
 
