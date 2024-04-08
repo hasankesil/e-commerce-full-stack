@@ -51,10 +51,10 @@ const Footer = () => {
                             <div className="footer-contact-bottom">
                                 <div className="download-app">
                                     <a href="#">
-                                        <img src="img/footer/app-store.png" alt="" />
+                                        <img src="/imgimg/footer/app-store.png" alt="" />
                                     </a>
                                     <a href="#">
-                                        <img src="img/footer/google-play.png" alt="" />
+                                        <img src="/imgimg/footer/google-play.png" alt="" />
                                     </a>
                                 </div>
 
@@ -185,7 +185,7 @@ const Footer = () => {
                         </div>
 
                         <a href="#">
-                            <img src="img/footer/cards.png" alt="" />
+                            <img src="/imgimg/footer/cards.png" alt="" />
                         </a>
                         <div className="footer-menu">
                             <ul className="footer-menu-list">

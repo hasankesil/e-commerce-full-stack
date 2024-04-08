@@ -8,7 +8,7 @@ const BlogDetails = () => {
                 <article>
                     <figure>
                         <a href="#">
-                            <img src="img/blogs/blog1.jpg" alt="" />
+                            <img src="/imgimg/blogs/blog1.jpg" alt="" />
                         </a>
                     </figure>
                     <div className="blog-wrapper">
@@ -106,7 +106,7 @@ const BlogDetails = () => {
                         </div>
                     </div>
                 </article>
-               <Reviews/>
+                <Reviews />
             </div>
         </section>
     );
