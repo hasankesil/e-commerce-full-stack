@@ -4,6 +4,8 @@ const router = express.Router();
 
 const Category = require("../models/Category.js");
 
+// yeni bir kategori oluşturma (Create)
+
 router.post("/", async (req, res) => {
   try {
     const { name, img } = req.body;
@@ -21,9 +23,17 @@ router.post("/", async (req, res) => {
   }
 });
 
-//! tüm kategorilşeri, getirme (read-all)
+//! tüm kategorileri, getirme (read-all)
 router.get("/", async (req, res) => {
-  res.send("kategoriler getirildi.");
+  try {
+    const categories = await Category.find();
+    console.log("Kategoriler başarıyla getirildi:", categories);
+    res.status(200).json(categories);
+  } catch (error) {
+    console.error("Kategorileri getirirken bir hata oluştu:", error);
+    res.status(500).json({ error: "Sunucu hatası!!" });
+  }
 });
+
 
 module.exports = router;
