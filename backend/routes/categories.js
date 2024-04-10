@@ -48,12 +48,34 @@ router.get("/:categoryId", async (req,res)=> {
   } catch (error) {
     console.error("kategori getirilirken  hata oluştu", error);
     res.status(500).json({error: "sunucu hatası!!"});
-    
+
   }
 
- 
 
+});
 
+// update
 
-})
+router.put("/:categoryId", async (req, res) => {
+  try {
+    const categoryId = req.params.categoryId;
+    const updates = req.body;
+
+    const updatedCategory = await Category.findByIdAndUpdate(
+      categoryId,
+      updates,
+      { new: true }
+    );
+
+    if (!updatedCategory) {
+      return res.status(404).json({ error: "Kategori bulunamadı." });
+    }
+
+    res.status(200).json(updatedCategory);
+  } catch (error) {
+    console.error("Kategori güncellenirken bir hata oluştu:", error);
+    res.status(500).json({ error: "Sunucu hatası." });
+  }
+});
+
 module.exports = router;
