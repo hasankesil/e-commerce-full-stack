@@ -22,6 +22,12 @@ const connect = async () => {
     }
 }
 
+//middlewares
+
+app.use(express.json());
+
+
+
 app.use("/api", mainRoute);
 
 
