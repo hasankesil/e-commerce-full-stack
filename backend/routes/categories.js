@@ -35,5 +35,25 @@ router.get("/", async (req, res) => {
   }
 });
 
+// Belirli bir kategori getirme (read-single)
 
+router.get("/:categoryId", async (req,res)=> {
+
+  try {
+     const categoryId = req.params.categoryId;
+     const category = await Category.findById(categoryId);
+     console.log("kategori başarıyla getirildi:", category)
+       res.status(200).json(category);
+    
+  } catch (error) {
+    console.error("kategori getirilirken  hata oluştu", error);
+    res.status(500).json({error: "sunucu hatası!!"});
+    
+  }
+
+ 
+
+
+
+})
 module.exports = router;
