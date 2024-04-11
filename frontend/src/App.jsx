@@ -10,6 +10,7 @@ import ProductDetailsPage from "./pages/ProductDetailsPage";
 import Blogs from "./components/Blogs/Blogs";
 import BlogPage from "./pages/BlogPage";
 import ContactPage from "./pages/ContactPage";
+import CategoryPage from "./pages/admin/Categories/CategoryPage";
 import AdminUserPage from "./pages/admin/AdminUserPage";
 
 
@@ -29,8 +30,9 @@ function App() {
       <Route path="/blog/:id" element={<BlogDetailsPage />} />
       <Route path="/admin/*">
         <Route path="users" element={<AdminUserPage />} />
+        <Route path="categories" element={<CategoryPage />} />
       </Route>
-      
+
 
 
 
