@@ -7,6 +7,8 @@ import {Link, useLocation} from "react-router-dom";
 const Header = ({ setIsSearchShow }) => {
 
     const {cartItems} = useContext(CartContext);
+
+    const user = localStorage.getItem("user");
     const {pathname} = useLocation() ;
 
     return (
@@ -202,6 +204,25 @@ const Header = ({ setIsSearchShow }) => {
                                         <span className="header-cart-count">{cartItems.length}</span>
                                     </Link>
                                 </div>
+                                {user && (
+                                    <button
+                                        className="search-button"
+                                        onClick={() => {
+                                            if (
+                                                window.confirm(
+                                                    "Çıkış yapmak istediğinize emin misiniz?"
+                                                )
+                                            ) {
+                                                {
+                                                    localStorage.removeItem("user");
+                                                    window.location.href = "/";
+                                                }
+                                            }
+                                        }}
+                                    >
+                                        <i className="bi bi-box-arrow-right"></i>
+                                    </button>
+                                )}
                             </div>
                         </div>
                     </div>
