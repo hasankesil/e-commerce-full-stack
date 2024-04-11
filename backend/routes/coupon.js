@@ -4,26 +4,25 @@ const router = express.Router();
 
 const Coupon = require("../models/Coupon.js");
 
-
 // Yeni bir kupon oluşturma (Create)
 router.post("/", async (req, res) => {
-    try {
-        const {code} = req.body;
-        const existingCoupon = await Coupon.findOne({code});
-        if (existingCoupon){
-            return res.status(400).json({error: "this coupon is alreacy exists"})
-        }
-      const newCoupon = new Coupon(req.body);
-      await newCoupon.save();
-
-      res.status(201).json(newCoupon);
-    } catch (error) {
-      console.log(error);
-      res.status(500).json({ error: "Server error." });
+  try {
+    const { code } = req.body;
+    const existingCoupon = await Coupon.findOne({ code });
+    if (existingCoupon) {
+      return res.status(400).json({ error: "this coupon is alreacy exists" });
     }
-  });
+    const newCoupon = new Coupon(req.body);
+    await newCoupon.save();
 
-  //! tüm kuponları, getirme (read-all)
+    res.status(201).json(newCoupon);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error: "Server error." });
+  }
+});
+
+//! tüm kuponları, getirme (read-all)
 router.get("/", async (req, res) => {
   try {
     const coupons = await Coupon.find();
@@ -45,15 +44,13 @@ router.get("/:couponId", async (req, res) => {
     if (!coupon) {
       return res.status(404).json({ error: "Coupon not found." });
     }
-  
 
     res.status(200).json(coupon);
- } catch (error) {
+  } catch (error) {
     console.log(error);
     res.status(500).json({ error: "Server error." });
   }
 });
-
 
 // Belirli bir kuponu getirme (Read - Single by Coupon Code)
 router.get("/code/:couponCode", async (req, res) => {
@@ -73,7 +70,7 @@ router.get("/code/:couponCode", async (req, res) => {
   }
 });
 
-// Kategori güncelleme (Update)
+// kupon güncelleme (Update)
 router.put("/:couponId", async (req, res) => {
   try {
     const couponId = req.params.couponId;
@@ -96,8 +93,22 @@ router.put("/:couponId", async (req, res) => {
   }
 });
 
+// Kupon silme (Delete)
+router.delete("/:couponId", async (req, res) => {
+  try {
+    const couponId = req.params.couponId;
 
+    const deletedCoupon = await Coupon.findByIdAndDelete(couponId);
 
+    if (!deletedCoupon) {
+      return res.status(404).json({ error: "Coupon not found." });
+    }
 
+    res.status(200).json(deletedCoupon);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error: "Server error." });
+  }
+});
 
-  module.exports = router
+module.exports = router;
