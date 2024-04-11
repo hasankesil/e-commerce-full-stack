@@ -10,6 +10,7 @@ import ProductDetailsPage from "./pages/ProductDetailsPage";
 import Blogs from "./components/Blogs/Blogs";
 import BlogPage from "./pages/BlogPage";
 import ContactPage from "./pages/ContactPage";
+import AdminUserPage from "./pages/admin/AdminUserPage";
 
 
 
@@ -26,6 +27,10 @@ function App() {
       <Route path="/auth" element={<AuthPage />} />
       <Route path="/product/:id" element={<ProductDetailsPage />} />
       <Route path="/blog/:id" element={<BlogDetailsPage />} />
+      <Route path="/admin/*">
+        <Route path="users" element={<AdminUserPage />} />
+      </Route>
+      
 
 
 
