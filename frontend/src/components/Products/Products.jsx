@@ -1,11 +1,11 @@
 // Products.jsx
-
-import { useState } from "react";
 import ProductItem from "./ProductItem";
 import "./Products.css";
 import productsData from "../../data.json";
 import Slider from "react-slick";
 import propTypes from "prop-types";
+import { useEffect, useState } from "react";
+import { message } from "antd";
 
 function NextBtn({ onClick }) {
     return (
@@ -32,7 +32,29 @@ PrevBtn.propTypes = {
 };
 
 function Products() {
-    const [products, setProducts] = useState(productsData);
+
+    const [products, setProducts] = useState([]);
+
+    const apiUrl = import.meta.env.VITE_API_BASE_URL;
+
+    useEffect(() => {
+        const fetchProducts = async () => {
+            try {
+                const response = await fetch(`${apiUrl}/api/products`);
+
+                if (response.ok) {
+                    const data = await response.json();
+                    setProducts(data);
+                } else {
+                    message.error("Veri getirme başarısız.");
+                }
+            } catch (error) {
+                console.log("Veri hatası:", error);
+            }
+        };
+        fetchProducts();
+    }, [apiUrl]);
+   
   
 
     const sliderSettings = {
@@ -70,10 +92,7 @@ function Products() {
                 </div>
                 <div className="product-wrapper product-carousel">
                     <Slider {...sliderSettings} >
-                        {products.map((product) => <ProductItem
-                            productItem={product}
-                            key={product.id}
-                        />)}
+                        {products.map((product) => <ProductItem productItem={product} key={product._id} />)}
                     </Slider>
                 </div>
             </div>
