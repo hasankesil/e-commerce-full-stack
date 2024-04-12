@@ -39,7 +39,7 @@ const CreateProductPage = () => {
         const sizes = values.sizes.split("\n").map((link) => link.trim());
         setLoading(true);
         try {
-            const response = await fetch(`http://localhost:5000/api/categories`, {
+            const response = await fetch(`http://localhost:5000/api/products`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
