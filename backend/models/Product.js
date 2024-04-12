@@ -9,7 +9,7 @@ const ReviewSchema = mongoose.Schema({
 const ProductSchema = mongoose.Schema(
   {
     name: { type: String, required: true },
-    img: [{ type: String, required: true }],
+    img: [{ type: [String], required: true }],
     reviews: [ReviewSchema],
     color: [{ type: String, required: true }],
     size: [{ type: String, required: true }],
